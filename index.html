@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Секретный документ для Алисы</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;800&family=Rubik+Mono+One&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="src/style.css">
+</head>
+<body>
+<main>
+  <section id="s-welcome" class="screen active">
+    <div class="photo-wrap">
+      <img class="photo" data-img="src/Images/alisa.png" src="src/Images/alisa.png" alt="Алиса">
+      <span class="stamp">ОДОБРЕНО<br>НИКЕМ</span>
+    </div>
+
+    <h1>Привет, Алиса!</h1>
+    <p class="lead">Данный сайт был создан с целью поднять настроение и занять у вас немного времени, которое не вернётся.</p>
+
+    <div class="calc">
+      <div class="calc-title">Ушло на создание около:</div>
+      <div class="formula">
+        <span class="frac"><span>(7! ÷ 5! − 3² · 2) · sin(π/2)</span><span>ln(e⁵) − √4</span></span>
+        <span class="op">·</span>
+        <span class="frac"><span>(2³)²</span><span>8²</span></span>
+      </div>
+      <div class="steps">= 24 ÷ 3 · 1</div>
+      <div class="result">= 8 часов</div>
+      <div class="plus">а также <b>1 бигбон</b> 🍜 и <b>3 кружки чая</b> по 450 мл 🍵🍵🍵</div>
+    </div>
+
+    <label class="check">
+      <input type="checkbox" id="agree">
+      <span>Вы соглашаетесь с <button type="button" class="word" id="openAgree">соглашением</button> о неразглашении соглашения в рамках соглашения о неразглашении</span>
+    </label>
+    <p class="error" id="err" role="alert" hidden></p>
+
+    <div class="start-slot" id="slot">
+      <button class="btn" id="startBtn" type="button">Начать</button>
+    </div>
+    <p class="taunt" id="taunt" aria-live="polite"></p>
+  </section>
+
+  <section id="s-task" class="screen">
+    <div class="task-no">Задание №1</div>
+    <h2 class="question" id="question">Кто из них настоящая Алиса?</h2>
+    <p class="hint" id="hint" hidden></p>
+    <div class="picks" id="picks">
+      <button class="pick" type="button" data-kind="model"><img data-img="src/Images/blini.png" src="src/Images/blini.png" alt="Модель Блини"></button>
+      <button class="pick" type="button" data-kind="pancakes"><img data-img="src/Images/pancakes.png" src="src/Images/pancakes.png" alt="Блины"></button>
+      <button class="pick" type="button" data-kind="speaker"><img data-img="src/Images/speaker.png" src="src/Images/speaker.png" alt="Колонка Алиса"></button>
+    </div>
+    <p class="eaten" id="eaten">Съедено: 0 / 3</p>
+    <p class="verdict" id="verdict" aria-live="polite"></p>
+    <div class="mirror" id="mirror" hidden>
+      <div class="mirror-frame">
+        <p>Все варианты съедены. Остался один человек, которого пак-ман не посмел тронуть.</p>
+        <p class="reveal">Настоящая Алиса — та, кто сейчас читает этот текст.</p>
+      </div>
+      <button class="btn" id="itsMe" type="button">Это я</button>
+    </div>
+  </section>
+
+  <section id="s-task2" class="screen">
+    <div class="task-no">Задание №2</div>
+    <h2 class="question">И так, задание 2 я не придумал, поэтому переходим к заданию 3</h2>
+    <button class="btn" id="to3" type="button">Ну ладно</button>
+  </section>
+
+  <section id="s-task3" class="screen">
+    <div class="task-no">Задание №3</div>
+    <h2 class="question">Установи дату: 13 сентября 2012</h2>
+    <p class="hint">Выбери поле и качай насос. Давление утекает: дни — быстро, месяцы — медленнее, год — почти незаметно. Поймай момент, когда дата верная, и жми «Зафиксировать».</p>
+    <div class="dates" id="dates">
+      <button class="dfield active" type="button" data-f="day"><small>День</small><b id="vDay"></b><span class="meter"><i id="mDay"></i></span></button>
+      <button class="dfield" type="button" data-f="month"><small>Месяц</small><b id="vMonth"></b><span class="meter"><i id="mMonth"></i></span></button>
+      <button class="dfield" type="button" data-f="year"><small>Год</small><b id="vYear"></b><span class="meter"><i id="mYear"></i></span></button>
+    </div>
+    <div class="rig" id="rig">
+      <div class="pump">
+        <div class="track" id="track"><div class="rod" id="rod"></div><div class="handle" id="handle">⇅ КАЧАЙ</div></div>
+      </div>
+    </div>
+    <p class="verdict" id="pumpMsg" aria-live="polite"></p>
+    <button class="btn" id="lockBtn" type="button">Зафиксировать</button>
+    <div class="mirror-frame" id="dateWin" hidden>
+      <p class="reveal">Дата принята!</p>
+      <button class="btn" id="to4" type="button">Дальше</button>
+    </div>
+  </section>
+
+  <section id="s-next" class="screen">
+    <h1>Продолжение следует…</h1>
+    <p class="lead">Задание 4 пока в разработке. Насос остывает.</p>
+  </section>
+</main>
+
+<div class="pac" id="pac" hidden><i class="t"></i><i class="b"></i><b class="eye"></b></div>
+
+<button class="bigbon" id="bigbon" type="button" hidden aria-label="Бигбон">🍜</button>
+
+<dialog id="agreeDlg">
+  <h3>Соглашение о соглашении</h3>
+  <div class="scroll" id="scroll">
+    <p id="typed"></p>
+    <div id="after" hidden>
+      <div class="pics">
+        <img data-img="src/Images/agreement1.png" src="src/Images/agreement1.png" alt="Картинка 1">
+        <img data-img="src/Images/agreement2.png" src="src/Images/agreement2.png" alt="Картинка 2">
+        <img data-img="src/Images/agreement3.png" src="src/Images/agreement3.png" alt="Картинка 3">
+      </div>
+      <button class="btn" id="acceptBtn" type="button">Принять</button>
+    </div>
+  </div>
+</dialog>
+
+<script src="src/app.js"></script>
+</body>
+</html>
